@@ -1,6 +1,5 @@
 package mx.com.lalducin.android_101.adapters
 
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.trip_card.view.*
 import mx.com.lalducin.android_101.R
-import mx.com.lalducin.android_101.TripDetail
 import mx.com.lalducin.android_101.models.Trip
 
 
@@ -42,8 +40,7 @@ class TripAdapter(val trips: List<Trip>) : RecyclerView.Adapter<TripAdapter.Trip
         }
 
         private fun startTripDetailActivity(position: Int) {
-            val intent = Intent(itemView.context, TripDetail::class.java)
-            intent.putExtra("TRIP_LIST_POSITION", position)
+            // TODO Create an Intent, put an extra that contains the position
             itemView.context.startActivity(intent)
         }
 

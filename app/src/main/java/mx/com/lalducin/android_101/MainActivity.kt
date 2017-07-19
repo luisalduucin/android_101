@@ -1,6 +1,5 @@
 package mx.com.lalducin.android_101
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
@@ -32,17 +31,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        tripsCards.layoutManager = GridLayoutManager(this, 1)
+        tripsCards.adapter = TripAdapter(trips = trips)
+
         addButton.setOnClickListener { _ -> startTripDetailActivity() }
     }
 
     private fun startTripDetailActivity() {
-        val intent = Intent(this, TripDetail::class.java)
-        startActivity(intent)
+        // TODO Create an Intent and start the activity
     }
 
-    override fun onResume() {
-        super.onResume()
-        tripsCards.layoutManager = GridLayoutManager(this, 1)
-        tripsCards.adapter = TripAdapter(trips = trips)
-    }
 }

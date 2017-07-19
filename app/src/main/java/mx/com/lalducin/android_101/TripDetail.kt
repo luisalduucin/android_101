@@ -19,7 +19,8 @@ class TripDetail : AppCompatActivity() {
         setContentView(R.layout.activity_trip_detail)
         setSupportActionBar(toolbar)
 
-        tripIndex = intent.getIntExtra("TRIP_LIST_POSITION", NEW_TRIP)
+        // TODO Retrieve the value that you send via the intent
+        // tripIndex =
 
         if (tripIndex != NEW_TRIP) {
             val trip = MainActivity.trips[tripIndex]
@@ -41,17 +42,11 @@ class TripDetail : AppCompatActivity() {
 
     private fun saveNewTrip() {
         val trip = Trip(
-                destination = destinationValue.text.toString(),
-                departureDate = departureDateValue.text.toString(),
-                budget = budgetValue.text.toString().toFloat(),
+                // TODO Add the missing parameters
                 destinationImage = defaultDestinationImage,
                 comments = commentsValue.text.toString())
 
-        if (tripIndex != NEW_TRIP) {
-            MainActivity.trips[tripIndex] = trip
-        } else {
-            MainActivity.trips.add(trip)
-        }
+        // TODO Add or update the above trip into the trips list located in the MainActivity
 
         finish()
     }
