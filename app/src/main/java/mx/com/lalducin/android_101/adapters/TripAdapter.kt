@@ -1,6 +1,5 @@
 package mx.com.lalducin.android_101.adapters
 
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.trip_card.view.*
 import mx.com.lalducin.android_101.R
-import mx.com.lalducin.android_101.TripDetail
 import mx.com.lalducin.android_101.models.Trip
 
 
@@ -21,14 +19,14 @@ class TripAdapter(val trips: List<Trip>) : RecyclerView.Adapter<TripAdapter.Trip
     }
 
     override fun onBindViewHolder(holder: TripCardHolder, position: Int) {
-        holder.bind(trips[position], position)
+        holder.bind(trips[position])
     }
 
     override fun getItemCount(): Int = trips.size
 
     class TripCardHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(trip: Trip, position: Int) {
+        fun bind(trip: Trip) {
             with(trip) {
                 itemView.destinationValue.text = destination
                 itemView.departureDateValue.text = departureDate
@@ -38,13 +36,6 @@ class TripAdapter(val trips: List<Trip>) : RecyclerView.Adapter<TripAdapter.Trip
                         .into(itemView.destinationImage)
             }
 
-            itemView.setOnClickListener { _ -> startTripDetailActivity(position) }
-        }
-
-        private fun startTripDetailActivity(position: Int) {
-            val intent = Intent(itemView.context, TripDetail::class.java)
-            intent.putExtra("TRIP_LIST_POSITION", position)
-            itemView.context.startActivity(intent)
         }
 
     }
