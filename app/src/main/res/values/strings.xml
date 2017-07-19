@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Android 101</string>
+    <string name="app_name">To Go List</string>
+    <string name="destination_image">Destination Image</string>
+    <string name="destination">Destination:</string>
+    <string name="departure_date">Departure Date:</string>
+    <string name="budget">Budget:</string>
+    <string name="title_activity_trip_detail">Trip Detail</string>
+    <string name="action_settings">Settings</string>
+    <string name="image_header">Image Header</string>
+    <string name="comments">Comments:</string>
 </resources>

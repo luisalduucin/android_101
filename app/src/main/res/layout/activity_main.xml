@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="mx.com.lalducin.android_101.MainActivity">
-
-    <!--TODO Add basic widgets (textView, EditText, Button, CheckBox)-->
     
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tripsCards"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.FloatingActionButton xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="45dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_add"
+        app:fabSize="normal" />
+
+</android.support.design.widget.CoordinatorLayout>
