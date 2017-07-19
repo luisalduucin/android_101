@@ -38,55 +38,72 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/departureDateValue"
+        <LinearLayout android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="8dp"
-            android:inputType="date"
+            android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/destinationValue" />
+            app:layout_constraintTop_toBottomOf="@id/destinationValue">
 
-        <TextView
-            android:id="@+id/departureDateLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:labelFor="@id/departureDateValue"
-            android:text="@string/departure_date"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/destinationValue" />
+            <TextView
+                android:id="@+id/departureDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:labelFor="@+id/departureDateValue"
+                android:text="@string/departure_date"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/budgetValue"
+            <EditText
+                android:id="@+id/departureDateValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:inputType="date" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout android:id="@+id/relativeLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="62dp"
-            android:layout_marginTop="8dp"
-            android:inputType="numberDecimal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/departureDateValue" />
+            app:layout_constraintTop_toBottomOf="@id/linearLayout">
 
-        <TextView
-            android:id="@+id/budgetLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:labelFor="@id/budgetValue"
-            android:text="@string/budget"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/budgetValue"
-            app:layout_constraintTop_toBottomOf="@+id/departureDateValue" />
+            <TextView
+                android:id="@+id/budgetLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:labelFor="@+id/budgetValue"
+                android:text="@string/budget"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/budgetValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:inputType="numberDecimal"
+                android:layout_toEndOf="@id/budgetLabel"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="FIX ME"
+                android:layout_below="@id/budgetValue"/>
+
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/commentsValue"
@@ -99,7 +116,7 @@
             android:maxLines="8"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/budgetValue" />
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
         <TextView
             android:id="@+id/commentsLabel"
@@ -113,7 +130,7 @@
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/commentsValue"
-            app:layout_constraintTop_toBottomOf="@+id/budgetValue" />
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     </android.support.constraint.ConstraintLayout>
 

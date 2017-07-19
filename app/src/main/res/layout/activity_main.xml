@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="mx.com.lalducin.android_101.MainActivity">
-    
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/tripsCards"
         android:layout_width="match_parent"
