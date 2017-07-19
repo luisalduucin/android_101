@@ -17,13 +17,9 @@ class MainActivity : AppCompatActivity() {
                         departureDate = Date().toString(),
                         budget = 200.5F,
                         destinationImage = RandomImageURLGenerator.generate(),
-                        comments = "It is the most representative circuit of the F1 championship."),
+                        comments = "It is the most representative circuit of the F1 championship.")
 
-                Trip(destination = "Amsterdam",
-                        departureDate = Date().toString(),
-                        budget = 500.0F,
-                        destinationImage = RandomImageURLGenerator.generate(),
-                        comments = "Great place to party!")
+                // TODO Add another initial Trip
         )
     }
 

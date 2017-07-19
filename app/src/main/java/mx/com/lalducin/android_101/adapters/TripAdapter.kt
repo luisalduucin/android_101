@@ -19,17 +19,20 @@ class TripAdapter(val trips: List<Trip>) : RecyclerView.Adapter<TripAdapter.Trip
     }
 
     override fun onBindViewHolder(holder: TripCardHolder, position: Int) {
-        holder.bind(trips[position])
+        // Once the onCreateViewHolder has been executed, we need to fill the widgets with
+        // the info stored in the Trip object through a holder instance
+        // TODO Write the line of code that is required here
     }
 
-    override fun getItemCount(): Int = trips.size
+    override fun getItemCount(): Int {
+        // TODO Return the trips list size
+    }
+
 
     class TripCardHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         fun bind(trip: Trip) {
             with(trip) {
-                itemView.destinationValue.text = destination
-                itemView.departureDateValue.text = departureDate
+                // TODO Bind the missing properties of the Trip Card
                 itemView.budgetValue.text = "$ ${budget}"
                 Picasso.with(itemView.context)
                         .load(destinationImage)
@@ -37,7 +40,6 @@ class TripAdapter(val trips: List<Trip>) : RecyclerView.Adapter<TripAdapter.Trip
             }
 
         }
-
     }
 
 }
