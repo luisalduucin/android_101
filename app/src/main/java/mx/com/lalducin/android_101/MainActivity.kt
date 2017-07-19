@@ -1,12 +1,48 @@
 package mx.com.lalducin.android_101
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
+import mx.com.lalducin.android_101.adapters.TripAdapter
+import mx.com.lalducin.android_101.models.Trip
+import mx.com.lalducin.android_101.utils.RandomImageURLGenerator
+import java.util.Date
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        val trips = mutableListOf(
+                Trip(destination = "Monaco",
+                        departureDate = Date().toString(),
+                        budget = 200.5F,
+                        destinationImage = RandomImageURLGenerator.generate(),
+                        comments = "It is the most representative circuit of the F1 championship."),
+
+                Trip(destination = "Amsterdam",
+                        departureDate = Date().toString(),
+                        budget = 500.0F,
+                        destinationImage = RandomImageURLGenerator.generate(),
+                        comments = "Great place to party!")
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        addButton.setOnClickListener { _ -> startTripDetailActivity() }
+    }
+
+    private fun startTripDetailActivity() {
+        val intent = Intent(this, TripDetail::class.java)
+        startActivity(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        tripsCards.layoutManager = GridLayoutManager(this, 1)
+        tripsCards.adapter = TripAdapter(trips = trips)
     }
 }
