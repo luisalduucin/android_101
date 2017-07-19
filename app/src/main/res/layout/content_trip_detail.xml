@@ -14,6 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp">
 
+        <!--Start Example of Constraints-->
+
         <EditText
             android:id="@+id/destinationValue"
             android:layout_width="0dp"
@@ -38,13 +40,20 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--Finish Example of Constraints-->
+
+
+        <!--TODO Fix the linear layout orientation-->
+
         <LinearLayout android:id="@+id/linearLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/destinationValue">
+
+            <!--TODO Change text size to 20sp and text color to colorPrimary-->
 
             <TextView
                 android:id="@+id/departureDateLabel"
@@ -54,17 +63,16 @@
                 android:layout_marginTop="8dp"
                 android:labelFor="@+id/departureDateValue"
                 android:text="@string/departure_date"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <!--TODO Set the corresponding input type and fix width-->
 
             <EditText
                 android:id="@+id/departureDateValue"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:inputType="date" />
+                android:layout_marginTop="8dp" />
 
         </LinearLayout>
 
@@ -87,21 +95,23 @@
                 android:text="@string/budget"
                 android:textStyle="bold"/>
 
+            <!--TODO Fix its position-->
+
             <EditText
                 android:id="@+id/budgetValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                android:inputType="numberDecimal"
-                android:layout_toEndOf="@id/budgetLabel"/>
+                android:inputType="numberDecimal"/>
+
+            <!--TODO Extract the hardcoded string to strings.xml, fix size and its position-->
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="FIX ME"
-                android:layout_below="@id/budgetValue"/>
+                android:text="FIX ME" />
 
         </RelativeLayout>
 
@@ -118,6 +128,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
+        <!--TODO Add constraints to fix its position-->
+
         <TextView
             android:id="@+id/commentsLabel"
             android:layout_width="wrap_content"
@@ -127,10 +139,7 @@
             android:layout_marginTop="20dp"
             android:labelFor="@id/commentsValue"
             android:text="@string/comments"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/commentsValue"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+            android:textStyle="bold"/>
 
     </android.support.constraint.ConstraintLayout>
 
